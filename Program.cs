@@ -25,7 +25,8 @@ namespace proj1
         {
             return (x / y);
         }
-
+        
+        //Comment
         static double Factorial(int x)
         {
             if (x == 0)
