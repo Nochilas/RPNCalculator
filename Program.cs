@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace proj1
+namespace calculator
 {
-    class RPN
+    class Program
     {
         static double[] reg = new double[4];
 
