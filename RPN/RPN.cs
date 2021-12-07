@@ -51,7 +51,7 @@ namespace calculator
 
         public override string ToString()
         {
-            return "";
+            return $"Y: {regs[1].ToString()} \n X: {regs[0].ToString()}";
             //Y: reg[1]
             //X: reg[0]
         }
