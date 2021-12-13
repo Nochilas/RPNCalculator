@@ -1,46 +1,31 @@
 ﻿using System;
+using RPNlib;
 
 namespace calculator
 {
     class Program
-    {
-        static double[] reg = new double[4];
-
-        static double Sum(double x, double y)
-        {
-            return x + y;
-        }
-
-        static double Subtract(double x, double y)
-        {
-            return x - y;
-        }
-
-        static double Multiply(double x, double y)
-        {
-            return (x * y);
-        }
-
-        static double Divide(double x, double y)
-        {
-            return (x / y);
-        }
-        
-        //Comment
-        static double Factorial(int x)
-        {
-            if (x == 0)
-                return 1;
-            
-            int res = 1;
-
-            for (int i = 1; i<=x; i++)
-                res *= i;
-            
-            return res;
-        }
+    {        
         static void Main()
         {
+            RPN rpn = new RPN();
+            rpn.Enter(5);
+            Console.WriteLine($"Ho inserito 5");
+
+            rpn.Enter(4);
+            Console.WriteLine($"Ho inserito 4");
+
+            rpn.Enter(3);
+            Console.WriteLine($"Ho inserito 3");
+
+            rpn.Enter(2);
+            Console.WriteLine($"Ho inserito 2");
+
+            rpn.Sum();
+            rpn.Sum();
+            rpn.Sum();
+            Console.WriteLine(rpn.ToString());
+
+            /*
             int x, y;
             char op;
             
@@ -54,25 +39,26 @@ namespace calculator
             switch (op)
             {
                 case '+':
-                    Console.Write(Sum(x, y));
+                    Console.WriteLine(Sum(x, y));
                     break;
                 
                 case '-':
-                    Console.Write(Subtract(x, y));
+                    Console.WriteLine(Subtract(x, y));
                     break;
 
                 case '*':
-                    Console.Write(Multiply(x, y));
+                    Console.WriteLine(Multiply(x, y));
                     break;
 
                 case '/':
-                    Console.Write(Divide(x, y));
+                    Console.WriteLine(Divide(x, y));
                     break;
 
                 default:
-                    Console.Write("Errore");
+                    Console.WriteLine("Errore");
                     break;
-            }
+            }*/
+
         }
     }
 }

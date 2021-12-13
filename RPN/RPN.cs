@@ -1,6 +1,6 @@
 using System;
 
-namespace calculator
+namespace RPNlib
 {
     public class RPN
     {
@@ -32,28 +32,53 @@ namespace calculator
             : this(4) {}
         
         
+        //FlushUp & FlushDown
+        private void FlushUp()
+        {
+            for(int i = regCount - 1; i > 0; i--)
+                regs[i] = regs[i - 1];
+        }
+
+        private void FlushDown()
+        {
+            for(int i = 1; i < regCount - 1; i++)
+                regs[i] = regs[i+1];
+        }
+
+        public void Enter(double n)
+        {
+            FlushUp();
+            regs[0] = n;
+        }
+
+        //Operations
         public void Sum()
         {
             regs[0] = regs[0] + regs[1];
-            regs[1] = 0;
-            regs[regCount - 2] = regs[regCount - 1];
+            FlushDown();
         }
 
-        private void FlushUp(double n)
+        public void Diff()
         {
-            for(int i = regCount - 1; i > 0; i--)
-            {
-                regs[i] = regs[i - 1];
-            }
+            regs[0] = regs[0] - regs[1];
+            FlushDown();
+        }
 
-            regs[0] = n;
+        public void Multiply()
+        {
+            regs[0] = regs[0] * regs[1];
+            FlushDown();
+        }
+
+        public void Divide()
+        {
+            regs[0] = regs[0] / regs[1];
+            FlushDown();
         }
 
         public override string ToString()
         {
-            return $"Y: {regs[1].ToString()} \n X: {regs[0].ToString()}";
-            //Y: reg[1]
-            //X: reg[0]
+            return $"Y: {regs[1]}\nX: {regs[0]}";
         }
     }
 }
