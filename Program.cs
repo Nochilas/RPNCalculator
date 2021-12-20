@@ -9,14 +9,14 @@ namespace calculator
         {
             int regCount;
             string command;
+            Manager manager;
 
             Console.WriteLine("Inserire numero di registri");
             regCount = Convert.ToInt32(Console.ReadLine());
+            manager = new Manager(regCount);
             
             Console.WriteLine("Inserire comando");
-            command = Console.ReadLine();
-
-            Manager manager = new Manager(regCount);
+            command = Console.ReadLine();            
             manager.ReadCommand(command);
             
             Console.WriteLine(manager.RPN.ToString());

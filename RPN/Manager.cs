@@ -12,7 +12,7 @@ namespace RPNlib
 
         public Manager(int regCount)
         {
-            RPN rpn = new RPN(regCount);
+            rpn = new RPN(regCount);
         }
 
         public void ReadCommand(string command)
