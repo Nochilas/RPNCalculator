@@ -7,58 +7,19 @@ namespace calculator
     {        
         static void Main()
         {
-            RPN rpn = new RPN();
-            rpn.Enter(5);
-            Console.WriteLine($"Ho inserito 5");
+            int regCount;
+            string command;
 
-            rpn.Enter(4);
-            Console.WriteLine($"Ho inserito 4");
-
-            rpn.Enter(3);
-            Console.WriteLine($"Ho inserito 3");
-
-            rpn.Enter(2);
-            Console.WriteLine($"Ho inserito 2");
-
-            rpn.Sum();
-            rpn.Sum();
-            rpn.Sum();
-            Console.WriteLine(rpn.ToString());
-
-            /*
-            int x, y;
-            char op;
+            Console.WriteLine("Inserire numero di registri");
+            regCount = Convert.ToInt32(Console.ReadLine());
             
-            Console.Write("Inserisci primo numero: ");
-            x = int.Parse(Console.ReadLine());
-            Console.Write("Inserisci secondo numero: ");
-            y = int.Parse(Console.ReadLine());
-            Console.Write("Inserisci operatore: ");
-            op = Convert.ToChar(Console.ReadLine());
+            Console.WriteLine("Inserire comando");
+            command = Console.ReadLine();
 
-            switch (op)
-            {
-                case '+':
-                    Console.WriteLine(Sum(x, y));
-                    break;
-                
-                case '-':
-                    Console.WriteLine(Subtract(x, y));
-                    break;
-
-                case '*':
-                    Console.WriteLine(Multiply(x, y));
-                    break;
-
-                case '/':
-                    Console.WriteLine(Divide(x, y));
-                    break;
-
-                default:
-                    Console.WriteLine("Errore");
-                    break;
-            }*/
-
+            Manager manager = new Manager(regCount);
+            manager.ReadCommand(command);
+            
+            Console.WriteLine(manager.RPN.ToString());
         }
     }
 }
