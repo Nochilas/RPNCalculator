@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/RPNserver/bin/Debug/net5.0/RPNCalculator.dll",
+            "program": "${workspaceFolder}/bin/Debug/net5.0/RPNCalculator.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/RPNserver",
+            "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false

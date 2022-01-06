@@ -4,7 +4,7 @@ using RPNlib;
 namespace calculator
 {
     class Program
-    {        
+    {  
         static void Main()
         {
             int regCount;
