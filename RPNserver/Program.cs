@@ -56,7 +56,7 @@ namespace RPNserver
     
                     // Show the data on the console.
                     Console.WriteLine( "Text received : {0}", data);
-                    data.Remove(data.IndexOf("<EOF>"));
+                    data = data.Remove(data.IndexOf("<EOF>"));
                     manager.ReadCommand(data);
                     data = manager.RPN.ToString();
     

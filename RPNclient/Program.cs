@@ -15,6 +15,7 @@ namespace RPNclient
             command = Console.ReadLine();
             command += "<EOF>";
             result = StartClient(command);
+            Console.WriteLine(result);
         }
 
         public static string StartClient(string command)
