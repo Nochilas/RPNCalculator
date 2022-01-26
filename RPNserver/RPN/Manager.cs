@@ -15,6 +15,11 @@ namespace RPNlib
             rpn = new RPN(regCount);
         }
 
+        public Manager()
+        {
+            rpn = new RPN(4);
+        }
+
         public void ReadCommand(string command)
         {
             string[] commands = command.Split(" ");
